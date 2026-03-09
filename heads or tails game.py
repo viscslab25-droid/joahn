@@ -1,3 +1,7 @@
+# This Python code is a simple game where the player can choose between "HEADS" or "TAILS" and then a
+# random result is generated. The player can win or lose points based on their choice. The game also
+# includes a feature where the player can enter a "prestige shop" to buy upgrades like more luck, more
+# points for winning, or points for losing.
 import random
 h=("heads","HEADS","Heads","h")
 t=("tails","TAILS","Tails","t")
