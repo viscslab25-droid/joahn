@@ -1,7 +1,6 @@
 print("You are playing the game. Press the ENTER key to start")
 import sys
 import random
-import time
 #remeber max limit should be 2^32
 r = random.randint(1,20)#for dmg
 ra= random.randint(1,20)#for mana

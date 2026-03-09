@@ -1,4 +1,4 @@
-n:int = 10**2
+n:int = 10**2*2
 import random
 # with open("dynamic.py","w") as f:
 #     f.write("i:int = int(input('enter a number : '))\n")
@@ -12,8 +12,14 @@ import random
 #     f.write("else:\n\tprint('The number was too large to comprhend')")
 with open("iter.py","w") as f:
     for i in range(n+1):
-        k:str = random.choice(["!","?","//","*",""])
+        k:str = random.choice(["!","?","//","*","","todo"])
         l:list[str] = []
         for j in range(i):
-            l.append("1")
-        f.write(f"#{k} {str(i):2s} => {"+".join(l)}\n")
+            if i>90 and j%10==0:
+                l.append("10")
+                continue
+            else:
+                if i>90:
+                    continue
+                l.append("1")
+        f.write(f"#{k+str(i):4s} => {'+'.join(l)}\n")
