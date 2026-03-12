@@ -33,3 +33,22 @@ def neg_collatz(x: int) -> str:
 with open("neg_collatz.txt", "w") as f:
     for i in range(-1, -101, -1):
         f.write(neg_collatz(i) + "\n\n")
+
+def collatz_conjecture_v2(first:int,mul:int=3,add:int=1,div:int=2)->set[int]:
+    seen:set[int] = set()
+    x = first
+    while x not in seen:
+        seen.add(x)
+        if x%2==0:
+            seen.add(x//div)
+        else:
+            seen.add(mul*x+add)
+        if x == first:
+            return seen
+    return set()
+with open("collatz_conjecture_v2.txt", "w") as fin:
+    for f in range(1,6):
+        for m in range(6):
+            for a in range(6):
+                for d in range(1,6):
+                    fin.write(f"first={f}, mul={m}, add={a}, div={d} -> {collatz_conjecture_v2(f,m,a,d)}\n\n")
