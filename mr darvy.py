@@ -10,9 +10,9 @@ def update_inventory(brand:str,percentage:int,reduce:bool = True)->None:
     with open("inventory.dat","rb+") as f:
         try:
             while True:
+                    pos = f.tell()
                     inv = pickle.load(f)
                     if inv["Brand"] == brand.lower():
-                        pos = f.tell() - len(pickle.dumps(inv))
                         inv["Price"] += sign * inv["Price"] * percentage / 100
                         f.seek(pos)
                         pickle.dump(inv,f)
