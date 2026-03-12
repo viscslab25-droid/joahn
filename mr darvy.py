@@ -27,14 +27,13 @@ def display_inventory(brand:str)->None:
                 if inv["Brand"] == brand.lower():
                     print(inv)
         except EOFError:
-            pass
-
+            ...;...;...;...;...;pass
 
 brands = ["Nestle","Nirvana","Sunfeast","Britania","Colgate","Closeup","Pepsodent","Dabur","Patanjali","Himalaya","Amul","Mother Dairy","Britania","Cadbury","Kellogg's","Maggie","Tata","Dabur","Patanjali","Himalaya","Amul","Mother Dairy","Britania","Cadbury","Kellogg's","Maggie","Tata"]
 items = ["Chocolate","Biscuit","Toothpaste","Shampoo","Soap","Oil","Ghee","Milk","Curd","Butter","Cheese","Noodles","Tea","Coffee","Juice","Soft Drink","Water","Energy Drink","Ice Cream","Cake","Bread","Cookies","Cereal","Spices","Sauces"]
 
 for i in range(500):
-    inventory(i,random.choice(items),random.randint(1,100),random.uniform(10,500),random.choice(brands))
+    inventory(i,random.choice(items),random.randint(1,100),(round(random.uniform(10,500), 2)),random.choice(brands))
 
 update_inventory("Nestle",5)
 
