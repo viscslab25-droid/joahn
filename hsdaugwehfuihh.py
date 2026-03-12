@@ -1,6 +1,21 @@
+# The `practical` class in Python contains various methods for string manipulation, number operations,
+# and text animation.
 import time,sys,threading
 class practical:   
     def vow(x:str,edge:bool=False):
+        """
+        The function `vow` takes a string `x` and replaces all vowels (and optionally 'y' if `edge` is
+        True) with '*' and returns the modified string.
+        
+        :param x: The `x` parameter is a string that represents the input text
+        :type x: str
+        :param edge: The `edge` parameter in the `vow` function is a boolean parameter that determines
+        whether the letter 'y' should be considered a vowel or not. If `edge` is set to `True`, then 'y'
+        is also considered a vowel, defaults to False
+        :type edge: bool (optional)
+        :return: The function `vow` is returning the input string `x` after replacing all vowels (and
+        optionally the letter 'y' if `edge=True`) with asterisks.
+        """
         v=list("aeiou")
         if edge:
             v.extend(["y"])
@@ -16,6 +31,19 @@ class practical:
         print(x[:2])
         return x[:2]
     def alt_series(x:int=1,n:int=1):
+        """
+        The function `alt_series` calculates the alternating series sum of x raised to consecutive
+        integers up to n.
+        
+        :param x: The parameter `x` in the `alt_series` function represents the base number that will be
+        raised to the power of the terms in the alternating series, defaults to 1
+        :type x: int (optional)
+        :param n: The parameter `n` in the `alt_series` function represents the number of terms in the
+        alternating series that will be calculated, defaults to 1
+        :type n: int (optional)
+        :return: The function `alt_series` is returning the sum of the alternating series up to the nth
+        term, where the terms alternate in sign.
+        """
         sign=1
         nn=n
         n=0
