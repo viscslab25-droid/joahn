@@ -7,12 +7,15 @@ def inventory(p_id:int,p_name:str,quantity:int,price:float,brand:str)->None:
 
 def update_inventory(brand:str,percentage:int,reduce:bool = True)->None:
     sign = -1 if reduce else 1
-    with open("inventory.dat","rb") as f:
+    with open("inventory.dat","rb+") as f:
         try:
             while True:
                     inv = pickle.load(f)
                     if inv["Brand"] == brand.lower():
+                        pos = f.tell() - len(pickle.dumps(inv))
                         inv["Price"] += sign * inv["Price"] * percentage / 100
+                        f.seek(pos)
+                        pickle.dump(inv,f)
         except EOFError:
             pass
 
